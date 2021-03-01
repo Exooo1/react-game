@@ -16,7 +16,7 @@ const initial: Object = {
     setTheme: [
         { id: 1, text: '18+', src: 'https://avatarko.ru/img/kartinka/33/guby_34320.jpg' },
         { id: 2, text: 'Provacation', src: 'https://u-stena.ru/upload/iblock/bf0/bf0292e61d6a0dd034908750bea53d56.jpg' },
-        { id: 3, text: 'Party', src: 'https://slovnet.ru/wp-content/uploads/2018/08/35-39.jpg' }
+        { id: 3, text: 'Party', src: 'http://s3-us-west-2.amazonaws.com/sportshub2-uploads-prod/files/sites/421/2019/08/23183550/dance-clipart-colorful-16.jpg  ' }
     ],
 
     oneStep: false,

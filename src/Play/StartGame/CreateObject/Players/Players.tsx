@@ -24,11 +24,12 @@ const Players = (props: any) => {
             }
 
         }}>
+            <img style={{ width: '150px', height: '150px' }} src='https://secureservercdn.net/45.40.149.159/2m3.b32.myftpupload.com/wp-content/uploads/2017/06/small-groups-icon-300x300.png' />
             <h1>How many people will play?</h1>
             <input className='players__create-players' placeholder='Write the number of players...' type='text' value={count} onChange={(e) => setCount(e.target.value)} /><br />
             {(count == '') || (Number.isInteger(+count)) && (+count <= 4 && +count >= 2) ? null : valid}
             <br />
-            <input className='players__submit' type='submit' value='send' />
+            <input className='players__submit' type='submit' value='Accept' />
         </form>
     )
 }

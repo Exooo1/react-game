@@ -5,8 +5,6 @@ import button from '../image/button.png'
 import ContainerStartGame from './StartGame/ContainerStartGame'
 import { Provider } from 'react-redux';
 
-const music = require("../audio/button.mp3");
-
 const Button = styled.button`
  border-radius:120px;
  width: 180px;
@@ -27,8 +25,6 @@ const Button = styled.button`
 `;
 
 const Play = (props: any): JSX.Element => {
-  
-  const audionButton = new Audio(music.default)
 
   const store = props.store
 
@@ -38,13 +34,10 @@ const Play = (props: any): JSX.Element => {
 
   const animationButton = (): void => {
     setAnimation(true)
-    audionButton.play()
     setTimeout(() => {
       setStart(true)
     }, 1000)
   }
-
-
 
   return <>
     <Provider store={store}>

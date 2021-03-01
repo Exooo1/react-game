@@ -19,12 +19,44 @@
     &__questions {
         border-bottom-right-radius: 30px;
         grid-area: question;
-        background-color: rgb(143, 57, 160);
+        background-color: #6422b8;
     }
     &__stats-players {
         border-bottom-left-radius: 30px;
         border-top-left-radius: 30px;
         grid-area: stats-players;
         background-color: rgb(29, 27, 27);
+    }
+}
+
+.optional-volume {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+
+    margin: 10px 450px;
+
+    img {
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .setting {
+        opacity: 0.7;
+        background-color: black;
+        border-radius: 20px;
+        margin-left: 30px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        strong {
+            color: yellow;
+        }
+        input{
+        }
     }
 }

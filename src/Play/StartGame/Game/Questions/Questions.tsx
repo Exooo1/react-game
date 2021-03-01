@@ -12,6 +12,8 @@ const Questions = (props: any) => {
 
     let [count, setCount] = useState(0)
 
+    let [dare, setDare] = useState(0)
+
     let [anim, setAnim] = useState(true)
 
 
@@ -24,6 +26,11 @@ const Questions = (props: any) => {
             { count < props.question['18+'].length ? setGetQuestions(props.question['18+'][count]) : setGetQuestions(<h1>The End</h1>) }
         }
     }
+
+    const dares = () => {
+        { dare < props.question.carryOut.length ? setGetQuestions(props.question.carryOut[dare]) : setGetQuestions(<h1>The End</h1>) }
+    }
+
     useEffect(() => {
         document.addEventListener('keydown', answerYes)
         return () => { document.removeEventListener('keydown', answerYes) }
@@ -31,6 +38,7 @@ const Questions = (props: any) => {
 
     const answerYes = (e: any) => {
         if (e.key == 'y') {
+            setDare(dare += 1)
             props.addTrue()
             setCount(count += 1)
             props.addTurn()
@@ -48,6 +56,7 @@ const Questions = (props: any) => {
 
     const answerNo = (e: any) => {
         if (e.key == 'n') {
+            setDare(dare += 1)
             props.addFalse()
             setCount(count += 1)
             props.addTurn()
@@ -58,6 +67,7 @@ const Questions = (props: any) => {
 
 
     const addTrue = () => {
+        setDare(dare += 1)
         props.addTrue()
         setCount(count += 1)
         props.addTurn()
@@ -66,6 +76,7 @@ const Questions = (props: any) => {
     }
 
     const addFalse = () => {
+        setDare(dare += 1)
         props.addFalse()
         setCount(count += 1)
         props.addTurn()
@@ -87,7 +98,7 @@ const Questions = (props: any) => {
             </div>
             <div className={anim ? 'questions-grid__questions' : 'questions-grid__twoQuestions'}>
                 <button onClick={truth}>Truth</button>
-                <button onClick={() => { setGetQuestions(props.question.carryOut[count]) }}>Dare</button>
+                <button onClick={dares}>Dare</button>
                 < p> {getQuestions}</p><br />
             </div>
         </div >
