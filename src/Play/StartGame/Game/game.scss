@@ -1,0 +1,30 @@
+.start-grid {
+    border-radius: 90px;
+    height: 745px;
+    display: grid;
+    grid-template-areas:
+        "stats-players players players"
+        "stats-players question question"
+        "stats-players question question";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    &__players {
+        border-top-right-radius: 30px;
+        display: grid;
+        text-align: center;
+        padding-top: 20px;
+        grid-area: players;
+        background-color: rgb(255, 255, 255);
+    }
+    &__questions {
+        border-bottom-right-radius: 30px;
+        grid-area: question;
+        background-color: rgb(143, 57, 160);
+    }
+    &__stats-players {
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        grid-area: stats-players;
+        background-color: rgb(29, 27, 27);
+    }
+}

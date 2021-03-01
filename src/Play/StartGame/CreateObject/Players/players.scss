@@ -1,0 +1,21 @@
+.players {
+    margin-top: 200px;
+    text-align: center;
+    &__create-players {
+        border-color: black;
+        outline: none !important;
+        border-style: inset;
+        width: 200px;
+        height: 30px;
+        border-radius: 30px;
+        padding-left: 10px;
+    }
+    &__submit {
+        font-size: 25px;
+        outline: none !important;
+        border-radius: 90px;
+        width: 200px;
+        height: 100px;
+        margin-top: 30px;
+    }
+}

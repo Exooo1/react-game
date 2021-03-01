@@ -1,0 +1,15 @@
+.create-theme {
+    h1 {
+        color: #ffffff;
+        text-align: center;
+    }
+    img {
+        border-radius: 90px;
+        width: 430px;
+        height: 430px;
+        &:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+    }
+}

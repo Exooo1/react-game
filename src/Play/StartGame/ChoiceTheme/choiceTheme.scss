@@ -1,0 +1,11 @@
+.theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__container {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 430px 430px 430px;
+        grid-gap: 2vw;
+    }
+}
