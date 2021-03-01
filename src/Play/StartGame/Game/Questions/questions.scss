@@ -9,9 +9,9 @@
         "button questions questions";
     &__questions {
         button {
-            margin-top: 100px;
-            margin-right: 70px;
-            margin-left: 70px;
+            margin-top: 125px;
+            margin-right: 40px;
+            margin-left: 40px;
             width: 180px;
             font-weight: 800;
             height: 70px;
@@ -21,23 +21,23 @@
             margin-bottom: 10px;
         }
         p {
+            margin-top: 80px;
             text-align: center;
         }
-        margin: 50px 0px;
-        margin-right: 60px;
+        margin: 100px 0px;
         width: 680px;
         background: rgb(255, 255, 255);
         border-radius: 90px;
-        height: 400px;
+        height: 300px;
         grid-area: questions;
         animation: questionA 1s;
         font-size: 25px;
     }
     &__twoQuestions {
         button {
-            margin-top: 100px;
-            margin-right: 70px;
-            margin-left: 70px;
+            margin-top: 125px;
+            margin-right: 40px;
+            margin-left: 40px;
             width: 180px;
             font-weight: 800;
             height: 70px;
@@ -47,24 +47,24 @@
             margin-bottom: 10px;
         }
         p {
+            margin-top: 80px;
             text-align: center;
         }
-        font-size: 25px;
-        margin: 50px 0px;
-        margin-right: 60px;
+        margin: 100px 0px;
+        width: 680px;
         background: rgb(255, 255, 255);
         border-radius: 90px;
-        width: 680px;
-        height: 400px;
+        height: 300px;
         grid-area: questions;
-        animation: questionsB 1s;
+        animation: questionB 1s;
+        font-size: 25px;
     }
     &__button {
         grid-area: button;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 120px;
+        margin-top: 30px;
         button {
             border: solid;
             border-color: khaki;

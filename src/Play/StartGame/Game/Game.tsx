@@ -3,33 +3,46 @@ import './game.scss'
 import PlayersGame from './PlayersGame/PlayersGame'
 import StatsPlayers from './StatsPlayers/StatsPlayers'
 import Questions from './Questions/Questions'
-import setting from '../../../image/setting.png'
-
+const clickButton = require("../../../audio/click-button.mp3");
+const audioButton = new Audio(clickButton.default)
 const music = require('../../../audio/background.mp3');
 const background = new Audio(music.default,)
-background.volume = 0.1
 
 
 
 const Game = (props: any) => {
 
-    const [volume, setVolume] = useState(0.52)
+    console.log(props)
+
+    const [volume, setVolume] = useState(0.2)
+
+    const clickButton = () => {
+        audioButton.play()
+    }
 
     background.volume = volume
+    audioButton.volume = volume
 
-    let [on_of, setOn_of] = useState(true)
+    let [musicOffOn, setMusicOffOn] = useState(false)
 
-    const audio = (e: any) => {
-        if (e.target == 0) {
-            setSetting(setting = !setting)
-        }
-        if (on_of) {
-            background.pause()
-            setOn_of(on_of = !on_of)
+    let [click, setClick] = useState(false)
+
+    const musicAudio = (e: any) => {
+        if (musicOffOn) {
+            background.muted=false
+            setMusicOffOn(musicOffOn = !musicOffOn)
         } else {
-            background.play()
-            setOn_of(on_of = !on_of)
+            background.muted=true
+            setMusicOffOn(musicOffOn = !musicOffOn)
         }
+    }
+    const clickAudio = (e: any) => {
+        if (click) {
+            audioButton.muted=false
+            setClick(click = !click)
+        }
+        audioButton.muted=true
+        setClick(click = !click)
     }
 
     useEffect(() => {
@@ -39,7 +52,7 @@ const Game = (props: any) => {
 
     let [setting, setSetting] = useState(false)
 
-    const getPlayers = props.players.map((players: any) => <PlayersGame profile={players.image} name={players.name} />)
+    const getPlayers = props.players.map((players: any) => <PlayersGame id={players.id} profile={players.image} name={players.name} images={props.images} addImage={props.addImage} />)
 
     return (
         <div >
@@ -47,10 +60,13 @@ const Game = (props: any) => {
                 <img src='https://lh3.googleusercontent.com/proxy/uEjlhAz-ZSAHc-CQumA88HT1VFxdy0DbX5T8xFrtwg_JGtKCHckc0PfsDvJOkN93q5H238XjPJckMFg'
                     onClick={() => setSetting(setting = !setting)} />
                 {setting ? <div className='setting'>
-                    <div style={{ marginTop: '10px' }}>
-                        <strong>On/Off:</strong> <button onClick={audio}>On/Off</button>
+                    <div style={{ marginTop: '20px' }}>
+                        <strong>Music :</strong> <button onClick={musicAudio}>On/Off</button><br/>
                     </div>
-                    <div style={{ marginTop: '10px', }}>
+                    <div style={{ marginTop: '20px' }}>
+                        <strong >click :</strong> <button onClick={clickAudio}>On/Off</button>
+                    </div>
+                    <div style={{ marginTop: '20px', }}>
                         <strong>Volume music:</strong><input onChange={(e) => {
                             setVolume(+e.target.value / 100)
                         }} type="range" />
@@ -64,7 +80,10 @@ const Game = (props: any) => {
                     addTurn={props.addTurn}
                     addTrue={props.addTrue}
                     addFalse={props.addFalse}
-                    players={props.players} /></div>
+                    players={props.players}
+                    turn={props.turn}
+                    clickButton={clickButton}
+                /></div>
                 <div className='start-grid__stats-players'><StatsPlayers
                     theme={props.theme}
                     question={props.question}

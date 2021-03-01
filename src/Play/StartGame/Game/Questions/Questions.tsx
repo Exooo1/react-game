@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import './questions.scss'
-const clickButton = require("../../../../audio/click-button.mp3");
+import Modal from './Modal'
 
 const Questions = (props: any) => {
-
-    const audio = new Audio(clickButton.default)
 
     const [getQuestions, setGetQuestions]: any = useState()
 
@@ -19,16 +17,18 @@ const Questions = (props: any) => {
 
     const truth = () => {
         if ("Provacation" == themes) {
-            { count < props.question.Provacation.length ? setGetQuestions(props.question.Provacation[count]) : setGetQuestions(<h1>The End</h1>) }
+            { count < props.question.Provacation.length ? setGetQuestions(props.question.Provacation[count]) : setGetQuestions(<Modal players={props.players} turn={props.turn} />) }
         } else if ('Party' == themes) {
-            { count < props.question.Party.length ? setGetQuestions(props.question.Party[count]) : setGetQuestions(<h1>The End</h1>) }
+            { count < props.question.Party.length ? setGetQuestions(props.question.Party[count]) : setGetQuestions(<Modal players={props.players} turn={props.turn} />) }
         } else {
-            { count < props.question['18+'].length ? setGetQuestions(props.question['18+'][count]) : setGetQuestions(<h1>The End</h1>) }
+            { count < props.question['18+'].length ? setGetQuestions(props.question['18+'][count]) : setGetQuestions(<Modal players={props.players} turn={props.turn} />) }
         }
+        setSelect(select = !select)
     }
 
     const dares = () => {
-        { dare < props.question.carryOut.length ? setGetQuestions(props.question.carryOut[dare]) : setGetQuestions(<h1>The End</h1>) }
+        { dare < props.question.carryOut.length ? setGetQuestions(props.question.carryOut[dare]) : setGetQuestions(<Modal players={props.players} turn={props.turn} />) }
+        setSelect(select = !select)
     }
 
     useEffect(() => {
@@ -43,7 +43,8 @@ const Questions = (props: any) => {
             setCount(count += 1)
             props.addTurn()
             setAnim(anim = !anim)
-            audio.play()
+            props.clickButton()
+            setSelect(select = !select)
         }
     }
 
@@ -61,7 +62,8 @@ const Questions = (props: any) => {
             setCount(count += 1)
             props.addTurn()
             setAnim(anim = !anim)
-            audio.play()
+            props.clickButton()
+            setSelect(select = !select)
         }
     }
 
@@ -72,7 +74,8 @@ const Questions = (props: any) => {
         setCount(count += 1)
         props.addTurn()
         setAnim(anim = !anim)
-        audio.play()
+        props.clickButton()
+        setSelect(select = !select)
     }
 
     const addFalse = () => {
@@ -81,25 +84,31 @@ const Questions = (props: any) => {
         setCount(count += 1)
         props.addTurn()
         setAnim(anim = !anim)
-        audio.play()
+        props.clickButton()
+        setSelect(select = !select)
     }
+
+    let [select, setSelect] = useState(false)
 
     return (
         <div className='questions-grid'>
             <div className='questions-grid__button'>
-                <button onClick={addTrue} style={{ background: 'rgb(44 165 44' }} >Yes</button>
-                <button onClick={addFalse} style={{ background: 'red' }}>No</button>
-                <h2>Next turn</h2>
-                <img onClick={() => {
-                    setCount(count += 1)
-                    setAnim(anim = !anim)
-                    props.addTurn()
-                }} className='questions-grid__button_image' src='https://iconarchive.com/download/i86013/graphicloads/100-flat-2/arrow-forward.ico' />
+                {select ? <div className='questions-grid__button'>
+                    <button onClick={addTrue} style={{ background: 'rgb(44 165 44' }} >Yes</button>
+                    <button onClick={addFalse} style={{ background: 'red' }}>No</button>
+                    <h2>Next turn</h2>
+                    <img onClick={() => {
+                        setCount(count += 1)
+                        setAnim(anim = !anim)
+                        props.addTurn()
+                    }} className='questions-grid__button_image' src='https://iconarchive.com/download/i86013/graphicloads/100-flat-2/arrow-forward.ico' />
+                </div> : null}
             </div>
             <div className={anim ? 'questions-grid__questions' : 'questions-grid__twoQuestions'}>
-                <button onClick={truth}>Truth</button>
-                <button onClick={dares}>Dare</button>
-                < p> {getQuestions}</p><br />
+                {select ? < p> {getQuestions}</p> : <div>
+                    <button onClick={truth}>Truth</button>
+                    <button onClick={dares}>Dare</button>
+                </div>}
             </div>
         </div >
     )

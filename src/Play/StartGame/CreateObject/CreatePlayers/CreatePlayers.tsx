@@ -15,9 +15,12 @@ const CreatePlayers = (props: any) => {
     })
 
     const add = (e: any) => {
+        if (name.length > 1) {
+            e.preventDefault()
+            props.addPlayers(name)
+            setName('')
+        }
         e.preventDefault()
-        props.addPlayers(name)
-        setName('')
     }
 
     return (

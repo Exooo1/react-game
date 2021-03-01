@@ -93,6 +93,18 @@ const createObjects = (state = initial, action: any) => {
                 players: stats
             }
         }
+        case 'ADD_IMAGE': {
+            const stats = state.players.map((item: any) => {
+                if (item.id == action.id) {
+                    item.image =state.images[action.setImage]
+                }
+                return item
+            })
+            return {
+                ...state,
+                players: stats
+            }
+        }
 
         default:
             return state;

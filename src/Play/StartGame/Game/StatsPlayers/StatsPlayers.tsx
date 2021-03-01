@@ -30,6 +30,7 @@ const StatsPlayers = (props: any) => {
 
     const turnPlayer = props.turnPlayers
 
+
     return (
         <div className='stats-players'>
             <h3>Your Theme</h3>

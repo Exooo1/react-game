@@ -10,7 +10,8 @@ let mapStateToProps = (state: any) => {
         question: state.theme.question,
         getTheme: state.theme.getTheme,
         turn: state.create.turn,
-        turnPlayers: state.create.turnPlayers
+        turnPlayers: state.create.turnPlayers,
+        images: state.create.images
     }
 }
 
@@ -25,6 +26,9 @@ let mapDispatchToProps = (dispatch: any) => {
         addFalse: () => {
             dispatch({ type: 'ADD_FALSE' })
         },
+        addImage: (id: any, setImage: any) => {
+            dispatch({ type: 'ADD_IMAGE', id, setImage })
+        }
     }
 }
 const ContainerGame = connect(mapStateToProps, mapDispatchToProps)(Game);
