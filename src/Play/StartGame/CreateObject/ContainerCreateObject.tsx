@@ -18,7 +18,7 @@ let mapDispatchToProps = (dispatch: any) => {
         addCount: (count: number) => {
             dispatch({ type: 'ADD_COUNT', count })
         },
-        addPlayers: (name: string, active: any) => {
+        addPlayers: (name: string,) => {
             dispatch({ type: "ADD_PLAYER", name })
         },
         setStart: () => {

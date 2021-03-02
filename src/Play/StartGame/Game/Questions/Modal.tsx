@@ -2,10 +2,16 @@ import { useState } from 'react';
 import './modal.scss'
 import congrats from '../../../../image/congrats.jpg'
 
-const Modal = (props: any) => {
-    console.log(props)
+interface Rec {
+    name: string
+    image: string
+    true: number
+    false: number
+}
 
-    const getPlayers = props.players.map((item: any) => {
+const Modal = (props: any) => {
+
+    const getPlayers = props.players.map((item: Rec) => {
         return <div style={{ marginTop: '10px' }}>
             <h4>{item.name}</h4>
             <img style={{ width: '120px', height: '120px', borderRadius: '90px' }} src={item.image} alt='img' />

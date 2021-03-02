@@ -37,7 +37,7 @@ const Questions = (props: any) => {
         return () => { document.removeEventListener('keydown', answerYes) }
     })
 
-    const answerYes = (e: any) => {
+    const answerYes = (e: KeyboardEvent) => {
         if (e.key === 'y') {
             setDare(dare += 1)
             setCount(count += 1)
@@ -56,7 +56,7 @@ const Questions = (props: any) => {
 
     })
 
-    const answerNo = (e: any) => {
+    const answerNo = (e: KeyboardEvent) => {
         if (e.key === 'n') {
             setDare(dare += 1)
             props.addFalse()
@@ -97,7 +97,7 @@ const Questions = (props: any) => {
                 {select ? <div className='questions-grid__button'>
                     <button onClick={addTrue} style={{ background: 'rgb(44 165 44' }} >Yes</button>
                     <button onClick={addFalse} style={{ background: 'red' }}>No</button>
-                    <img  onClick={() => {
+                    <img onClick={() => {
                         setCount(count += 1)
                         setAnim(anim = !anim)
                         props.addTurn()

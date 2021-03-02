@@ -11,7 +11,8 @@ const StatsPlayers = (props: any) => {
         return () => { document.removeEventListener('keydown', showStats) }
     })
 
-    const showStats = (e: any) => {
+    const showStats = (e: KeyboardEvent) => {
+        console.log(e)
         if (e.key === 's') {
             setShowStat(true)
         }
@@ -22,7 +23,7 @@ const StatsPlayers = (props: any) => {
         return () => { document.removeEventListener('keydown', closeShowStats) }
     })
 
-    const closeShowStats = (e: any) => {
+    const closeShowStats = (e: KeyboardEvent) => {
         if (e.key === 's') {
             setShowStat(false)
         }

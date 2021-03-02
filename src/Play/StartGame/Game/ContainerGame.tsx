@@ -26,7 +26,7 @@ let mapDispatchToProps = (dispatch: any) => {
         addFalse: () => {
             dispatch({ type: 'ADD_FALSE' })
         },
-        addImage: (id: any, setImage: any) => {
+        addImage: (id: number, setImage: number) => {
             dispatch({ type: 'ADD_IMAGE', id, setImage })
         }
     }

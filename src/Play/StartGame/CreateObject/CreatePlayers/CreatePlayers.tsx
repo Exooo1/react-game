@@ -3,13 +3,18 @@ import './createPlayers.scss'
 import buttonNext from '../../../../image/buttonNext.svg'
 import human from '../../../../image/human.png'
 
+interface Rec {
+    image: string
+    name: string
+}
+
 
 
 const CreatePlayers = (props: any) => {
 
     const [name, setName] = useState('')
 
-    const getPlayer = props.getPlayer.map((item: any) => {
+    const getPlayer = props.getPlayer.map((item: Rec) => {
         return <>
             <img className='create-players__add' src={item.image} alt='img' />
             <b className='item-text'>{item.name}</b>
@@ -17,6 +22,7 @@ const CreatePlayers = (props: any) => {
     })
 
     const add = (e: any) => {
+        console.log(e)
         if (name.length >= 1) {
             e.preventDefault()
             props.addPlayers(name)

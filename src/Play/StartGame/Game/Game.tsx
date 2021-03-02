@@ -10,14 +10,21 @@ const audioButton = new Audio(clickButton.default)
 const music = require('../../../audio/background.mp3');
 const background = new Audio(music.default,)
 
-const Game = (props: any) => {
+interface Rec {
+    id: number,
+    image: string,
+    name: string,
+    images: [],
+}
+
+const Game = (props: any): JSX.Element => {
 
     useEffect(() => {
         document.addEventListener('keydown', backgroundKey)
         return () => { document.removeEventListener('keydown', backgroundKey) }
     })
 
-    const backgroundKey = (e: any) => {
+    const backgroundKey = (e: KeyboardEvent) => {
         if (e.key === 'm') {
             background.muted = true
             setMusicOffOn(musicOffOn = !musicOffOn)
@@ -29,7 +36,7 @@ const Game = (props: any) => {
         return () => { document.removeEventListener('keydown', buttonKey) }
     })
 
-    const buttonKey = (e: any) => {
+    const buttonKey = (e: KeyboardEvent) => {
         if (e.key === 'b') {
             audioButton.muted = true
             setClick(click = !click)
@@ -80,7 +87,7 @@ const Game = (props: any) => {
 
     let [setting, setSetting] = useState(false)
 
-    const getPlayers = props.players.map((players: any) => <PlayersGame id={players.id} profile={players.image} name={players.name} images={props.images} addImage={props.addImage} />)
+    const getPlayers = props.players.map((players: Rec) => <PlayersGame id={players.id} profile={players.image} name={players.name} images={props.images} addImage={props.addImage} />)
 
     let [marks, setMarks] = useState(false)
 
