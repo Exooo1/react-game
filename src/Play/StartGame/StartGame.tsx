@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './startGame.scss'
 import ContainerTheme from './ChoiceTheme/ContainerTheme'
 import ContainerCreateObjects from './CreateObject/ContainerCreateObject'
@@ -6,7 +6,6 @@ import ContainerGame from './Game/ContainerGame'
 
 const StartGame = (props: any): JSX.Element => {
 
-    const [start, setStart] = useState(true)
 
     return (
         <div className='create'>

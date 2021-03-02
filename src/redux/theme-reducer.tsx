@@ -1,3 +1,6 @@
+import party from '../image/party.jpg'
+import provacation from '../image/provacation.jpg'
+import guby from '../image/guby.jpg'
 
 const questions = {
     "18+": ['What do you do in the shower in the morning?', 'Are you using obscene words?', 'Do you like alcoholic drinks?', 'With whom could you go to bed from those present?',
@@ -14,9 +17,9 @@ const questions = {
 
 const initial: Object = {
     setTheme: [
-        { id: 1, text: '18+', src: 'https://avatarko.ru/img/kartinka/33/guby_34320.jpg' },
-        { id: 2, text: 'Provacation', src: 'https://u-stena.ru/upload/iblock/bf0/bf0292e61d6a0dd034908750bea53d56.jpg' },
-        { id: 3, text: 'Party', src: 'http://s3-us-west-2.amazonaws.com/sportshub2-uploads-prod/files/sites/421/2019/08/23183550/dance-clipart-colorful-16.jpg  ' }
+        { id: 1, text: '18+', src: guby },
+        { id: 2, text: 'Provacation', src: provacation },
+        { id: 3, text: 'Party', src: party }
     ],
 
     oneStep: false,

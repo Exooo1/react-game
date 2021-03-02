@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './questions.scss'
 import Modal from './Modal'
+import next from '../../../../image/next.png'
 
 const Questions = (props: any) => {
 
@@ -16,9 +17,9 @@ const Questions = (props: any) => {
 
 
     const truth = () => {
-        if ("Provacation" == themes) {
+        if ("Provacation" === themes) {
             { count < props.question.Provacation.length ? setGetQuestions(props.question.Provacation[count]) : setGetQuestions(<Modal players={props.players} turn={props.turn} />) }
-        } else if ('Party' == themes) {
+        } else if ('Party' === themes) {
             { count < props.question.Party.length ? setGetQuestions(props.question.Party[count]) : setGetQuestions(<Modal players={props.players} turn={props.turn} />) }
         } else {
             { count < props.question['18+'].length ? setGetQuestions(props.question['18+'][count]) : setGetQuestions(<Modal players={props.players} turn={props.turn} />) }
@@ -37,14 +38,14 @@ const Questions = (props: any) => {
     })
 
     const answerYes = (e: any) => {
-        if (e.key == 'y') {
+        if (e.key === 'y') {
             setDare(dare += 1)
-            props.addTrue()
             setCount(count += 1)
             props.addTurn()
             setAnim(anim = !anim)
             props.clickButton()
             setSelect(select = !select)
+            props.addTrue()
         }
     }
 
@@ -53,10 +54,10 @@ const Questions = (props: any) => {
         document.addEventListener('keydown', answerNo)
         return () => { document.removeEventListener('keydown', answerNo) }
 
-    }, [])
+    })
 
     const answerNo = (e: any) => {
-        if (e.key == 'n') {
+        if (e.key === 'n') {
             setDare(dare += 1)
             props.addFalse()
             setCount(count += 1)
@@ -96,12 +97,11 @@ const Questions = (props: any) => {
                 {select ? <div className='questions-grid__button'>
                     <button onClick={addTrue} style={{ background: 'rgb(44 165 44' }} >Yes</button>
                     <button onClick={addFalse} style={{ background: 'red' }}>No</button>
-                    <h2>Next turn</h2>
-                    <img onClick={() => {
+                    <img  onClick={() => {
                         setCount(count += 1)
                         setAnim(anim = !anim)
                         props.addTurn()
-                    }} className='questions-grid__button_image' src='https://iconarchive.com/download/i86013/graphicloads/100-flat-2/arrow-forward.ico' />
+                    }} className='questions-grid__button_image' src={next} alt="img" />
                 </div> : null}
             </div>
             <div className={anim ? 'questions-grid__questions' : 'questions-grid__twoQuestions'}>

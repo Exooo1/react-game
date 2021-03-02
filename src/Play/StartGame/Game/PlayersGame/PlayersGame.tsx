@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './playersGame.scss'
-import pencil from '../../../../image/pencil.png'
 
 
 const PlayersGame = (props: any) => {
@@ -28,11 +27,11 @@ const PlayersGame = (props: any) => {
         <div className="players-game">
             <h2>{props.name}</h2>
             {image ? <div className='players-game__image-grid'>
-                <img onClick={one} src={props.images[0]} />
-                <img onClick={two} src={props.images[1]} />
-                <img onClick={three} src={props.images[2]} />
-                <img onClick={four} src={props.images[3]} />
-            </div> : <img className='players-game__profile' src={props.profile} onClick={() => setImage(image = !image)} />}
+                <img alt='img' onClick={one} src={props.images[0]} />
+                <img alt='img' onClick={two} src={props.images[1]} />
+                <img alt='img' onClick={three} src={props.images[2]} />
+                <img alt='img' onClick={four} src={props.images[3]} />
+            </div> : <img className='players-game__profile' alt='img' src={props.profile} onClick={() => setImage(image = !image)} />}
         </div>
     )
 }

@@ -5,13 +5,10 @@ import StatsPlayers from './StatsPlayers/StatsPlayers'
 import Questions from './Questions/Questions'
 import sett from '../../../image/setting.png'
 import mark from '../../../image/mark.png'
-
 const clickButton = require("../../../audio/click-button.mp3");
 const audioButton = new Audio(clickButton.default)
 const music = require('../../../audio/background.mp3');
 const background = new Audio(music.default,)
-
-
 
 const Game = (props: any) => {
 
@@ -21,7 +18,7 @@ const Game = (props: any) => {
     })
 
     const backgroundKey = (e: any) => {
-        if (e.key == 'm') {
+        if (e.key === 'm') {
             background.muted = true
             setMusicOffOn(musicOffOn = !musicOffOn)
         }
@@ -33,7 +30,7 @@ const Game = (props: any) => {
     })
 
     const buttonKey = (e: any) => {
-        if (e.key == 'b') {
+        if (e.key === 'b') {
             audioButton.muted = true
             setClick(click = !click)
         }
@@ -43,10 +40,12 @@ const Game = (props: any) => {
 
     const clickButton = () => {
         if (click) {
+
+        } else {
             audioButton.muted = false
             audioButton.play()
         }
-        audioButton.play()
+
     }
 
     background.volume = volume
@@ -56,7 +55,7 @@ const Game = (props: any) => {
 
     let [click, setClick] = useState(false)
 
-    const musicAudio = (e: any) => {
+    const musicAudio = () => {
         if (musicOffOn) {
             background.muted = false
             setMusicOffOn(musicOffOn = !musicOffOn)
@@ -65,9 +64,8 @@ const Game = (props: any) => {
             setMusicOffOn(musicOffOn = !musicOffOn)
         }
     }
-    const clickAudio = (e: any) => {
+    const clickAudio = () => {
         if (click) {
-            console.log('test')
             audioButton.muted = false
             setClick(click = !click)
         }
@@ -102,8 +100,8 @@ const Game = (props: any) => {
                     <p>button - b (off button)</p>
                     <p style={{ color: 'red', fontWeight: 700 }}>Сhange the player's photo, click on the photo!!! </p>
                     <button onClick={() => setMarks(marks = !marks)}>close</button>
-                </div> : <img style={{ marginRight: '410px', borderRadius: '90px' }} src={mark} onMouseOver={() => setMarks(true)} />}
-                <img src={sett}
+                </div> : <img alt='img' style={{ marginRight: '20px', borderRadius: '90px' }} src={mark} onMouseOver={() => setMarks(true)} />}
+                <img alt='img' src={sett}
                     onClick={() => setSetting(setting = !setting)} />
                 {setting ? <div className='setting'>
                     <div style={{ marginTop: '20px' }}>

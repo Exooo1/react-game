@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './createObject.scss'
 import Players from './Players/Players'
 import CreatePlayers from './CreatePlayers/CreatePlayers'

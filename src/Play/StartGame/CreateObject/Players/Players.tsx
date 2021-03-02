@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './players.scss'
+import people from '../../../../image/people.png'
 
 
 const Players = (props: any) => {
@@ -13,24 +14,29 @@ const Players = (props: any) => {
 
     return (
         <form className='players' onSubmit={(e) => {
-            console.log(count.length)
-            if (count.length == 0) {
+
+            debugger
+            if (count.length === 0) {
                 e.preventDefault()
             } else if (Number.isInteger(+count)) {
-                e.preventDefault()
-                props.addCount(+count)
+                if (+count < 2 || +count > 4) {
+                    e.preventDefault()
+                } else {
+                    e.preventDefault()
+                    props.addCount(+count)
+                }
             } else {
                 e.preventDefault()
             }
 
         }}>
-            <img style={{ width: '150px', height: '150px' }} src='https://secureservercdn.net/45.40.149.159/2m3.b32.myftpupload.com/wp-content/uploads/2017/06/small-groups-icon-300x300.png' />
+            <img style={{ width: '150px', height: '150px' }} src={people} alt='img' />
             <h1>How many people will play?</h1>
             <input className='players__create-players' placeholder='Write the number of players...' type='text' value={count} onChange={(e) => setCount(e.target.value)} /><br />
-            {(count == '') || (Number.isInteger(+count)) && (+count <= 4 && +count >= 2) ? null : valid}
+            { (count === '') || (Number.isInteger(+count)) && (+count <= 4 && +count >= 2) ? null : valid}
             <br />
             <input className='players__submit' type='submit' value='Accept' />
-        </form>
+        </form >
     )
 }
 

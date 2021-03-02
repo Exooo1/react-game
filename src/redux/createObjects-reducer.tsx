@@ -1,3 +1,8 @@
+import man1 from '../image/man1.png'
+import man2 from '../image/man2.jpg'
+import man3 from '../image/man3.jpg'
+import man4 from '../image/man4.jpg'
+
 const initial: any = {
 
     players: [],
@@ -10,9 +15,9 @@ const initial: any = {
 
     setStart: true,
 
-    images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD5iROb1TgJ_rcl-6r-68v1yjtID052zxSkw&usqp=CAU',
-        'https://image.freepik.com/free-vector/people-profile-icon_24877-40758.jpg', 'https://image.freepik.com/free-vector/people-profile-icon_24877-40756.jpg',
-        'https://image.freepik.com/free-vector/people-profile-icon_24877-40761.jpg'],
+    images: [man1,
+        man2, man3,
+        man4],
 
     turnPlayers: 0,
 
@@ -64,7 +69,7 @@ const createObjects = (state = initial, action: any) => {
                 setStart: false
             }
         case "ADD_TURN": {
-            if (state.turnPlayers == state.count - 1) {
+            if (state.turnPlayers === state.count - 1) {
                 state.turnPlayers = 0
             } else {
                 state.turnPlayers++
@@ -82,7 +87,7 @@ const createObjects = (state = initial, action: any) => {
             let a = 1
             state.countTrue = 1
             const stats = state.players.map((item: any) => {
-                if (item.id == state.turnPlayers + 1) {
+                if (item.id === state.turnPlayers + 1) {
                     item.true += a
                 }
                 return item
@@ -97,7 +102,7 @@ const createObjects = (state = initial, action: any) => {
             let a = 1
             state.countTrue = 1
             const stats = state.players.map((item: any) => {
-                if (item.id == state.turnPlayers + 1) {
+                if (item.id === state.turnPlayers + 1) {
                     item.false += a
                 }
                 return item
@@ -110,7 +115,7 @@ const createObjects = (state = initial, action: any) => {
         }
         case 'ADD_IMAGE': {
             const stats = state.players.map((item: any) => {
-                if (item.id == action.id) {
+                if (item.id === action.id) {
                     item.image = state.images[action.setImage]
                 }
                 return item
