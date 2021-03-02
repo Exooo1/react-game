@@ -26,6 +26,14 @@ const initial: any = {
 
 }
 
+interface IObject {
+    name: string,
+    image: string,
+    id: number,
+    true: number,
+    false: number
+}
+
 const createObjects = (state = initial, action: any) => {
     debugger
     switch (action.type) {
@@ -39,10 +47,12 @@ const createObjects = (state = initial, action: any) => {
             state.id++;
             let str = action.name
             const name = str[0].toUpperCase() + str.slice(1);
-            const add = {
+            const add: IObject = {
                 name: name,
                 image: state.images[state.players.length],
-                id: state.id
+                id: state.id,
+                true: 0,
+                false: 0,
             }
             return {
                 ...state,
@@ -68,10 +78,12 @@ const createObjects = (state = initial, action: any) => {
             }
         }
         case 'ADD_TRUE': {
+
+            let a = 1
             state.countTrue = 1
             const stats = state.players.map((item: any) => {
-                if (item.id == state.turnPlayers) {
-                    item.true += state.countTrue
+                if (item.id == state.turnPlayers + 1) {
+                    item.true += a
                 }
                 return item
             })
@@ -82,9 +94,12 @@ const createObjects = (state = initial, action: any) => {
             }
         }
         case 'ADD_FALSE': {
-            state.countFalse += 1
+            let a = 1
+            state.countTrue = 1
             const stats = state.players.map((item: any) => {
-                item.false = state.countFalse
+                if (item.id == state.turnPlayers + 1) {
+                    item.false += a
+                }
                 return item
             })
 
@@ -96,7 +111,7 @@ const createObjects = (state = initial, action: any) => {
         case 'ADD_IMAGE': {
             const stats = state.players.map((item: any) => {
                 if (item.id == action.id) {
-                    item.image =state.images[action.setImage]
+                    item.image = state.images[action.setImage]
                 }
                 return item
             })

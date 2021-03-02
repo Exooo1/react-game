@@ -34,9 +34,30 @@
     justify-content: flex-start;
     align-items: flex-start;
     position: fixed;
+    margin: 15px 10px;
+    text-align: center;
 
-    margin: 10px 450px;
-
+    &__mark{
+        background-color: azure;
+        height: 295px;
+        width: 160px;
+        border-radius: 20px;
+        align-items: center;
+        margin-right: 290px;
+        p{
+            margin-top: -8px;
+        }
+        button{
+            cursor: pointer;
+            font-weight: 600;
+            background-color: rgb(5, 255, 25);
+            margin-top: -10px;
+            width: 70px;
+            height: 30px;
+            border: none;
+            border-radius: 20px;
+        }
+    }
     img {
         z-index: 10;
         width: 40px;
@@ -50,11 +71,16 @@
         background-color: black;
         border-radius: 20px;
         margin-left: 24px;
-        width: 160px;
-        height: 160px;
+        width: 175px;
+        height: 205px;
         text-align: center;
         strong {
             color: yellow;
+        }
+        input{
+            border: none;
+            width: 50px;
+            background-color: white;
         }
     }   
 }
