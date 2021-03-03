@@ -1,0 +1,581 @@
+.questions-grid {
+    display: grid;
+    // grid-template-columns: 260px 1fr ;
+    // grid-template-rows: 1fr 1fr ;
+    text-align: center;
+    grid-template-areas:
+        "button questions questions"
+        "button questions questions"
+        "button questions questions";
+    &__questions {
+        button {
+            outline: none !important;
+            margin-top: 25px;
+            margin-right: 40px;
+            margin-left: 40px;
+            width: 180px;
+            font-weight: 800;
+            height: 70px;
+            border-radius: 90px;
+            border: none;
+            font-size: 20px;
+            margin-bottom: 10px;
+            background: rgb(165, 97, 171);
+            background: linear-gradient(90deg, rgba(165, 97, 171, 1) 3%, rgba(238, 39, 63, 1) 100%);
+            &:hover {
+                background: #2ee59d;
+                box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+                color: white;
+                transform: translateY(-7px);
+            }
+        }
+        p {
+            margin-top: 20px;
+            text-align: center;
+        }
+        margin: 100px 0px;
+        width: 680px;
+        background: rgb(255, 255, 255);
+        border-radius: 90px;
+        height: 300px;
+        grid-area: questions;
+        animation: questionA 1s;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+    }
+    &__twoQuestions {
+        button {
+            outline: none !important;
+            margin-top: 25px;
+            margin-right: 40px;
+            margin-left: 40px;
+            width: 180px;
+            font-weight: 800;
+            height: 70px;
+            border-radius: 90px;
+            border: none;
+            font-size: 20px;
+            margin-bottom: 10px;
+            background: rgb(165, 97, 171);
+            background: linear-gradient(90deg, rgba(165, 97, 171, 1) 3%, rgba(238, 39, 63, 1) 100%);
+            &:hover {
+                background: #2ee59d;
+                box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+                color: white;
+                transform: translateY(-7px);
+            }
+        }
+        p {
+            margin-top: 20px;
+            text-align: center;
+        }
+        margin: 100px 0px;
+        width: 680px;
+        background: rgb(255, 255, 255);
+        border-radius: 90px;
+        height: 300px;
+        grid-area: questions;
+        animation: questionB 1s;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+    }
+    &__button {
+        grid-area: button;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-left: 10px;
+        button {
+            outline: none !important;
+            border: solid;
+            border-color: khaki;
+            font-size: 20px;
+            font-weight: 800;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+            cursor: pointer;
+            margin-top: 40px;
+            width: 60px;
+            height: 60px;
+            border-radius: 90px;
+            &:hover {
+                transform: scale(1.2);
+            }
+            &:active {
+                transform: scale(0.7);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1660px) {
+    .questions-grid {
+        display: grid;
+        text-align: center;
+        grid-template-areas:
+            "button questions questions"
+            "button questions questions"
+            "button questions questions";
+        &__questions {
+            button {
+                margin-top: 25px;
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 130px;
+                font-weight: 300;
+                height: 70px;
+                border-radius: 90px;
+                border: none;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 100px 0px;
+            width: 400px;
+            background: rgb(255, 255, 255);
+            border-radius: 90px;
+            height: 300px;
+            grid-area: questions;
+            animation: questionA 1s;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        &__twoQuestions {
+            button {
+                margin-top: 25px;
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 180px;
+                font-weight: 800;
+                height: 70px;
+                border-radius: 90px;
+                border: none;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 100px 0px;
+            width: 400px;
+            background: rgb(255, 255, 255);
+            border-radius: 90px;
+            height: 300px;
+            grid-area: questions;
+            animation: questionB 1s;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .questions-grid {
+        display: grid;
+        text-align: center;
+        grid-template-areas:
+            "button questions questions"
+            "button questions questions"
+            "button questions questions";
+        &__questions {
+            button {
+                margin-top: 25px;
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 130px;
+                font-weight: 300;
+                height: 70px;
+                border-radius: 90px;
+                border: none;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 200px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 200px;
+            grid-area: questions;
+            animation: questionA 1s;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        &__twoQuestions {
+            button {
+                margin-top: 25px;
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 180px;
+                font-weight: 800;
+                height: 70px;
+                border-radius: 90px;
+                border: none;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 200px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 200px;
+            grid-area: questions;
+            animation: questionB 1s;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+    }
+}
+@media screen and (max-width: 670px) {
+    .questions-grid {
+        display: grid;
+        text-align: center;
+
+        grid-template-areas:
+            "button questions questions"
+            "button questions questions"
+            "button questions questions";
+        &__questions {
+            button {
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 50px;
+                font-weight: 300;
+                height: 20px;
+                border-radius: 90px;
+                border: none;
+                font-size: 10px;
+                margin-bottom: 25px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 100px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 100px;
+            grid-area: questions;
+            animation: questionA 1s;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        &__twoQuestions {
+            button {
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 50px;
+                font-weight: 300;
+                height: 20px;
+                border-radius: 90px;
+                border: none;
+                font-size: 10px;
+                margin-bottom: 25px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 100px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 100px;
+            grid-area: questions;
+            animation: questionB 1s;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        &__button {
+            grid-area: button;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 55px;
+            margin-left: 0px;
+            button {
+                border: solid;
+                border-color: khaki;
+                font-size: 12px;
+                font-weight: 800;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+                cursor: pointer;
+                margin-top: 40px;
+                width: 40px;
+                height: 40px;
+                border-radius: 90px;
+                &:hover {
+                    transform: scale(1.2);
+                }
+                &:active {
+                    transform: scale(0.7);
+                }
+            }
+            img {
+                cursor: pointer;
+                margin-top: 100px;
+                width: 40px;
+                height: 40px;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .questions-grid {
+        display: grid;
+        text-align: center;
+
+        grid-template-areas:
+            "button questions questions"
+            "button questions questions"
+            "button questions questions";
+        &__questions {
+            button {
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 50px;
+                font-weight: 300;
+                height: 20px;
+                border-radius: 90px;
+                border: none;
+                font-size: 10px;
+                margin-bottom: 25px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 100px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 100px;
+            grid-area: questions;
+            animation: questionA 1s;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        &__twoQuestions {
+            button {
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 50px;
+                font-weight: 300;
+                height: 20px;
+                border-radius: 90px;
+                border: none;
+                font-size: 10px;
+                margin-bottom: 25px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 100px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 100px;
+            grid-area: questions;
+            animation: questionB 1s;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        &__button {
+            grid-area: button;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 55px;
+            margin-left: 0px;
+            button {
+                border: solid;
+                border-color: khaki;
+                font-size: 12px;
+                font-weight: 800;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+                cursor: pointer;
+                margin-top: 40px;
+                width: 40px;
+                height: 40px;
+                border-radius: 90px;
+                &:hover {
+                    transform: scale(1.2);
+                }
+                &:active {
+                    transform: scale(0.7);
+                }
+            }
+            img {
+                cursor: pointer;
+                margin-top: 100px;
+                width: 40px;
+                height: 40px;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 370px) {
+    .questions-grid {
+        display: grid;
+        text-align: center;
+        grid-template-areas:
+            "button questions questions"
+            "button questions questions"
+            "button questions questions";
+        &__questions {
+            button {
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 30px;
+                height: 30px;
+                border-radius: 20px;
+                border: none;
+                font-size: 10px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 70px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 160px;
+            grid-area: questions;
+            animation: questionA 1s;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0px;
+        }
+        &__twoQuestions {
+            button {
+                margin-right: 40px;
+                margin-left: 40px;
+                width: 30px;
+                height: 30px;
+                border-radius: 20px;
+                border: none;
+                font-size: 10px;
+            }
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+            margin: 160px 0px;
+            width: 70px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            height: 160px;
+            grid-area: questions;
+            animation: questionB 1s;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 00px;
+        }
+        &__button {
+            grid-area: button;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0px;
+            button {
+                border: solid;
+                border-color: khaki;
+                font-size: 7px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+                cursor: pointer;
+                margin-top: 40px;
+                width: 30px;
+                height: 30px;
+                border-radius: 90px;
+                &:hover {
+                    transform: scale(1.2);
+                }
+                &:active {
+                    transform: scale(0.7);
+                }
+            }
+            img {
+                cursor: pointer;
+                margin-top: 100px;
+                width: 40px;
+                height: 40px;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+@keyframes questionA {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes questionsB {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

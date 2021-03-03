@@ -1,0 +1,32 @@
+.players {
+    margin-top: 100px;
+    text-align: center;
+    &__create-players {
+        border-color: black;
+        outline: none !important;
+        border-style: inset;
+        width: 200px;
+        height: 30px;
+        border-radius: 30px;
+        padding-left: 10px;
+        border-style: outset;
+        border-width: thin;
+        &::placeholder{
+            font-size: 14px;
+        }
+    }
+    &__submit {
+        &:active{
+            transform: scale(0.8);
+        }
+        cursor: pointer;
+        border: none;
+        background-color: yellowgreen;
+        font-size: 25px;
+        outline: none !important;
+        border-radius: 90px;
+        width: 140px;
+        height: 70px;
+        margin-top: 30px;
+    }
+}

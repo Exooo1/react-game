@@ -1,0 +1,16 @@
+.create {
+    opacity: 0.95;
+    background-color: #370561;
+    margin: 4% 10%;
+    height: 735px;
+    border-radius: 30px;
+}
+
+@media screen and(max-width:600px) {
+    .create {
+        opacity: 0.95;
+        background-color: #370561;
+        height: 335px;
+        border-radius: 20px;
+    }
+}

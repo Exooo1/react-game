@@ -1,0 +1,20 @@
+.stats-players {
+    animation:Stats 2s;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    &__theme {
+        border-radius: 90px;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@keyframes Stats{
+    0%{
+        transform: translate(-600px,0);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}

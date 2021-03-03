@@ -1,0 +1,105 @@
+.create-theme {
+    h1 {
+        color: #ffffff;
+        text-align: center;
+    }
+    img {
+        border-radius: 90px;
+        width: 400px;
+        height: 400px;
+        &:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .create-theme {
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        img {
+            border-radius: 40px;
+            width: 130px;
+            height: 130px;
+            &:hover {
+                transform: scale(1.1);
+                transition: 1s;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .create-theme {
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        img {
+            border-radius: 40px;
+            width: 140px;
+            height: 140px;
+            &:hover {
+                transform: scale(1.1);
+                transition: 1s;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .create-theme {
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        img {
+            border-radius: 40px;
+            width: 150px;
+            height: 150px;
+            &:hover {
+                transform: scale(1.1);
+                transition: 1s;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .create-theme {
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        img {
+            border-radius: 40px;
+            width: 200px;
+            height: 200px;
+            &:hover {
+                transform: scale(1.1);
+                transition: 1s;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .create-theme {
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        img {
+            border-radius: 40px;
+            width: 140px;
+            height: 140px;
+            &:hover {
+                transform: scale(1.1);
+                transition: 1s;
+            }
+        }
+    }
+}
