@@ -12,7 +12,7 @@ const Button = styled.button`
  display: flex;
  justify-content: center;
  align-items: center;
- position: absolute;
+ position: fixed;
  left: calc(50.3% - 100px);
  top:calc(50.7% - 100px);
  border:none;
@@ -22,6 +22,7 @@ const Button = styled.button`
  color:white;
  background-image: url(${button});
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ cursor: pointer;
 `;
 
 const Play = (props: any): JSX.Element => {
@@ -39,12 +40,12 @@ const Play = (props: any): JSX.Element => {
     }, 1000)
   }
 
-  return <>
+  return <div className="wrapper">
     <Provider store={store}>
       <Button onClick={animationButton} className={animation ? 'play-anim' : ''}><strong>Play</strong></Button>
       {start ? <ContainerStartGame /> : null}
     </Provider>
-  </>
+  </div>
 }
 
 export default Play;

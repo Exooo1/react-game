@@ -31,7 +31,9 @@ const PlayersGame = (props: any) => {
                 <img alt='img' onClick={two} src={props.images[1]} />
                 <img alt='img' onClick={three} src={props.images[2]} />
                 <img alt='img' onClick={four} src={props.images[3]} />
-            </div> : <img className='players-game__profile' alt='img' src={props.profile} onClick={() => setImage(image = !image)} />}
+            </div> : <div>
+                    <img className='players-game__profile' alt='img' src={props.profile} onClick={() => setImage(image = !image)} />
+                </div>}
         </div>
     )
 }

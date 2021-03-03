@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './statsPlayers.scss'
 import PlayersGame from '../PlayersGame/PlayersGame'
+import TurnPeople from './TurnPeople'
 
 const StatsPlayers = (props: any) => {
 
@@ -31,14 +32,13 @@ const StatsPlayers = (props: any) => {
 
     const turnPlayer = props.turnPlayers
 
-
     return (
         <div className='stats-players'>
             <h3>Your Theme</h3>
             <img className='stats-players__theme' src={props.theme} alt='img' />
             <h2>TURN : {props.turn} </h2>
             <h2>Now it's turn &#8595;</h2>
-            <PlayersGame key={props.players[turnPlayer].id} name={props.players[turnPlayer].name}
+            <TurnPeople key={props.players[turnPlayer].id} name={props.players[turnPlayer].name}
                 profile={props.players[turnPlayer].image}
             />
             {showStat ? <div  >

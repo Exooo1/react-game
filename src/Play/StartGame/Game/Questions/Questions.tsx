@@ -97,11 +97,6 @@ const Questions = (props: any) => {
                 {select ? <div className='questions-grid__button'>
                     <button onClick={addTrue} style={{ background: 'rgb(44 165 44' }} >Yes</button>
                     <button onClick={addFalse} style={{ background: 'red' }}>No</button>
-                    <img onClick={() => {
-                        setCount(count += 1)
-                        setAnim(anim = !anim)
-                        props.addTurn()
-                    }} className='questions-grid__button_image' src={next} alt="img" />
                 </div> : null}
             </div>
             <div className={anim ? 'questions-grid__questions' : 'questions-grid__twoQuestions'}>
