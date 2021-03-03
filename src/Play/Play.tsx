@@ -4,6 +4,8 @@ import './play.scss'
 import button from '../image/button.png'
 import ContainerStartGame from './StartGame/ContainerStartGame'
 import { Provider } from 'react-redux';
+import git from '../image/git.png'
+import rolling from '../image/rolling.png'
 
 const Button = styled.button`
  border-radius:120px;
@@ -40,12 +42,16 @@ const Play = (props: any): JSX.Element => {
     }, 1000)
   }
 
-  return <div className="wrapper">
+  return <>
     <Provider store={store}>
       <Button onClick={animationButton} className={animation ? 'play-anim' : ''}><strong>Play</strong></Button>
       {start ? <ContainerStartGame /> : null}
+      <header>
+        <img alt='img' src={rolling} className='logo' />
+        <a href='https://github.com/Exooo1/react-game/tree/react-game' target='blank'><img className='link' src={git} alt='img' /></a>
+      </header>
     </Provider>
-  </div>
+  </>
 }
 
 export default Play;

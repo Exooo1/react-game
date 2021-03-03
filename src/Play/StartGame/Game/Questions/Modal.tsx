@@ -34,7 +34,7 @@ const Modal = (props: any) => {
                         {getPlayers}
                     </div>
                 </div>
-            </div> : <button style={{ color: 'red' }} onClick={() => { setModal(true) }}>ShowStats</button>}
+            </div> : <button style={{ color: 'white' }} onClick={() => { setModal(true) }}>ShowStats</button>}
         </>
     )
 }
