@@ -1,103 +1,103 @@
 .players-game {
-    animation: Players 2s;
+	animation: Players 2s;
 }
 .players-game__profile {
-    cursor: pointer;
-    width: 120px;
-    height: 120px;
-    border-radius: 90px;
+	cursor: pointer;
+	width: 120px;
+	height: 120px;
+	border-radius: 90px;
 }
 .players-game__image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-left: 39px;
-    margin-right: 39px;
-    height: 170px;
-    background-color: rgb(33, 36, 35);
-    border-radius: 20px;
-    margin-bottom: 20px;
-    img {
-        cursor: pointer;
-        border: solid;
-        border-width: thin;
-        text-align: center;
-        border-radius: 20px;
-        width: 85px;
-        height: 85px;
-    }
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-left: 39px;
+	margin-right: 39px;
+	height: 170px;
+	background-color: rgb(33, 36, 35);
+	border-radius: 20px;
+	margin-bottom: 20px;
+	img {
+		cursor: pointer;
+		border: solid;
+		border-width: thin;
+		text-align: center;
+		border-radius: 20px;
+		width: 85px;
+		height: 85px;
+	}
 }
 
 @media screen and (max-width: 920px) {
-    .players-game {
-        animation: Players 2s;
-    }
-    .players-game__profile {
-        cursor: pointer;
-        width: 60px;
-        height: 60px;
-        border-radius: 90px;
-    }
-    .players-game__image-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-left: 10px;
-        margin-right: 10px;
-        height: 135px;
-        background-color: rgb(33, 36, 35);
-        border-radius: 20px;
-        margin-bottom: 20px;
-        img {
-            cursor: pointer;
-            border: solid;
-            border-width: thin;
-            text-align: center;
-            border-radius: 20px;
-            width: 65px;
-            height: 65px;
-        }
-    }
+	.players-game {
+		animation: Players 2s;
+	}
+	.players-game__profile {
+		cursor: pointer;
+		width: 60px;
+		height: 60px;
+		border-radius: 90px;
+	}
+	.players-game__image-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin-left: 10px;
+		margin-right: 10px;
+		height: 135px;
+		background-color: rgb(33, 36, 35);
+		border-radius: 20px;
+		margin-bottom: 20px;
+		img {
+			cursor: pointer;
+			border: solid;
+			border-width: thin;
+			text-align: center;
+			border-radius: 20px;
+			width: 65px;
+			height: 65px;
+		}
+	}
 }
 @media screen and (max-width: 510px) {
-    .players-game {
-        margin-top: 50px;
-        h2 {
-            font-size: 12px;
-        }
-        animation: Players 2s;
-    }
-    .players-game__profile {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        border-radius: 90px;
-    }
-    .players-game__image-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-left: 130px;
-        margin-right: 130px;
-        height: 170px;
-        background-color: rgb(33, 36, 35);
-        border-radius: 20px;
-        margin-bottom: 20px;
-        img {
-            cursor: pointer;
-            border: solid;
-            border-width: thin;
-            text-align: center;
-            border-radius: 20px;
-            width: 85px;
-            height: 85px;
-        }
-    }
+	.players-game {
+		margin-top: 50px;
+		h2 {
+			font-size: 12px;
+		}
+		animation: Players 2s;
+	}
+	.players-game__profile {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		border-radius: 90px;
+	}
+	.players-game__image-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin-left: 130px;
+		margin-right: 130px;
+		height: 170px;
+		background-color: rgb(33, 36, 35);
+		border-radius: 20px;
+		margin-bottom: 20px;
+		img {
+			cursor: pointer;
+			border: solid;
+			border-width: thin;
+			text-align: center;
+			border-radius: 20px;
+			width: 85px;
+			height: 85px;
+		}
+	}
 }
 
 @keyframes Players {
-    0% {
-        transform: translate(0px, -200px);
-    }
-    100% {
-        transform: translate(0px, 0px);
-    }
+	0% {
+		transform: translate(0px, -200px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
 }

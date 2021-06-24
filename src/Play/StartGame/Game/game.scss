@@ -1,85 +1,85 @@
 .start-grid {
-    border-radius: 90px;
-    height: 745px;
-    display: grid;
-    grid-template-areas:
-        "stats-players players players"
-        "stats-players question question"
-        "stats-players question question";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    &__players {
-        border-top-right-radius: 30px;
-        display: grid;
-        text-align: center;
-        padding-top: 20px;
-        grid-area: players;
-        background-color: rgb(255, 255, 255);
-    }
-    &__questions {
-        border-bottom-right-radius: 30px;
-        grid-area: question;
-        background-color: rgb(131, 134, 139);
-    }
-    &__stats-players {
-        border-bottom-left-radius: 30px;
-        border-top-left-radius: 30px;
-        grid-area: stats-players;
-        background-color: rgb(29, 27, 27);
-    }
+	border-radius: 90px;
+	height: 745px;
+	display: grid;
+	grid-template-areas:
+		'stats-players players players'
+		'stats-players question question'
+		'stats-players question question';
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	&__players {
+		border-top-right-radius: 30px;
+		display: grid;
+		text-align: center;
+		padding-top: 20px;
+		grid-area: players;
+		background-color: rgb(255, 255, 255);
+	}
+	&__questions {
+		border-bottom-right-radius: 30px;
+		grid-area: question;
+		background-color: rgb(131, 134, 139);
+	}
+	&__stats-players {
+		border-bottom-left-radius: 30px;
+		border-top-left-radius: 30px;
+		grid-area: stats-players;
+		background-color: rgb(29, 27, 27);
+	}
 }
 
 .optional-volume {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: fixed;
-    margin: 15px 10px;
-    text-align: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	position: fixed;
+	margin: 15px 10px;
+	text-align: center;
 
-    &__mark{
-        background-color: azure;
-        height: 295px;
-        width: 160px;
-        border-radius: 20px;
-        align-items: center;
-        p{
-            margin-top: -8px;
-        }
-        button{
-            cursor: pointer;
-            font-weight: 600;
-            background-color: rgb(5, 255, 25);
-            margin-top: -10px;
-            width: 120px;
-            height: 30px;
-            border: none;
-            border-radius: 20px;
-        }
-    }
-    img {
-        z-index: 10;
-        width: 40px;
-        height: 40px;
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-    .setting {
-        opacity: 0.7;
-        background-color: black;
-        border-radius: 20px;
-        margin-left: 24px;
-        width: 175px;
-        height: 205px;
-        text-align: center;
-        strong {
-            color: yellow;
-        }
-        input{
-            border: none;
-            width: 50px;
-            background-color: white;
-        }
-    }   
+	&__mark {
+		background-color: azure;
+		height: 295px;
+		width: 160px;
+		border-radius: 20px;
+		align-items: center;
+		p {
+			margin-top: -8px;
+		}
+		button {
+			cursor: pointer;
+			font-weight: 600;
+			background-color: rgb(5, 255, 25);
+			margin-top: -10px;
+			width: 120px;
+			height: 30px;
+			border: none;
+			border-radius: 20px;
+		}
+	}
+	img {
+		z-index: 10;
+		width: 40px;
+		height: 40px;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+	.setting {
+		opacity: 0.7;
+		background-color: black;
+		border-radius: 20px;
+		margin-left: 24px;
+		width: 175px;
+		height: 205px;
+		text-align: center;
+		strong {
+			color: yellow;
+		}
+		input {
+			border: none;
+			width: 50px;
+			background-color: white;
+		}
+	}
 }
